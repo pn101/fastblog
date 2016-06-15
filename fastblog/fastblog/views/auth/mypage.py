@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class MyPageView(TemplateView):
+class MyPageView(LoginRequiredMixin, TemplateView):
     template_name = 'auth/mypage.html'
 
     def get_context_data(self, **kwargs):
