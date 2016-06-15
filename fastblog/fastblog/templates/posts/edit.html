@@ -6,9 +6,7 @@
 <h1>{{ site_name }}</h1>
 <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="text" name="title" value="{{ post.title }}">
-    <input type="text" name="content" value="{{ post.content }}">
-    <input type="file" name="image" value="{{ post.image.url }}">
+    {{ form.as_p }}
     <input type="submit" value="Submit">
     
 </form>
