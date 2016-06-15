@@ -5,6 +5,7 @@
 {% block content %}
     <h1>{{ post.title }}</h1></br>
     <a href="{% url 'fastblog:edit' pk=post.id %}">Edit FastBlog Post</a></br>
+    <a href="{% url 'fastblog:delete' pk=post.id %}">Delete FastBlog Post</a></br>
     <img src="{% if post.image %}{{ post.image.url }}{% else %}http://placehold.it/300x200{% endif %}" alt="{{ post.title }}">
     <p>{{ post.content }}</p>
 {% endblock %}
