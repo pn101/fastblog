@@ -4,4 +4,11 @@
 
 {% block content %}
 <h1>{{ request.user.username }}</h1>
+<ul>
+    {% for post in request.user.post_set.all %}
+    <li>
+        <h4><a href="{% url 'fastblog:detail' pk=post.id %}">{{ post.title }}</a></h4>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
