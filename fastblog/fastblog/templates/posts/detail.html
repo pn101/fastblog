@@ -8,4 +8,13 @@
     <a href="{% url 'fastblog:delete' pk=post.id %}">Delete FastBlog Post</a></br>
     <img src="{% if post.image %}{{ post.image.url }}{% else %}http://placehold.it/300x200{% endif %}" alt="{{ post.title }}">
     <p>{{ post.content }}</p>
+
+    <h4>Comments ({{ post.comment_set.count }})</h4>
+    <ul>
+        {% for comment in post.comment_set.all %}
+        <li id="{{ comment.id }}">
+            {{ comment.content }} 
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
