@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>{{ site_name }}</h1>
-
+<a href="{% url 'fastblog:create' %}">Create FastBlog</a>
 <ul>
     {% for post in post_list %}
     <li>
