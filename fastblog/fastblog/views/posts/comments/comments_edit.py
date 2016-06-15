@@ -17,7 +17,7 @@ class PostCommentEditView(CommentBaseView, View):
 
         return render(
                 request,
-                'posts/comments_edit.html',
+                'posts/comment_edit.html',
                 {
                     'post': post,
                     'comment': comment,
