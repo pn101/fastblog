@@ -17,7 +17,7 @@ class LoginView(View):
     def post(self, request, *args, **kwargs):
         username = request.POST.get('username')
         password = request.POST.get('password')
-        next_page = request.POST.get('next_page') or ('home')
+        next_page = request.POST.get('next_page') or ('auth:mypage')
 
         user = authenticate(username=username, password=password)
 
