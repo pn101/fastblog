@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1>{{ request.user.username }}</h1>
+<a href="{% url 'fastblog:create' %}">Create FastBlog Post</a>
 <ul>
     {% for post in request.user.post_set.all %}
     <li>
