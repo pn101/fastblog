@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1></br>
+    <img src="{% if post.image %}{{ post.image.url }}{% else %}http://placehold.it/300x200{% endif %}" alt="{{ post.title }}">
+    <p>{{ post.content }}</p>
+{% endblock %}
