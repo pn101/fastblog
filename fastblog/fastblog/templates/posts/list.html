@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+
+<ul>
+    {% for post in post_list %}
+    <li>
+        <a href="">{{ post.title }}</a>
+        <img src="{% if post.image %}{{ post.image.url }}{% else %}http://placehold.it/300x200{% endif %}" alt="{{ post.title }}">
+        <p>{{ post.content }}</p>
+        <p>:: posted by <a href="">@{{ post.user.username }}</a></p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

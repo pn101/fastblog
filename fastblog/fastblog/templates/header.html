@@ -1,5 +1,6 @@
 <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'fastblog:list' %}">Blog</a></li>
 
     {% if request.user.is_authenticated %}
     <li>Welcome, <a href="{% url 'auth:mypage' %}">@{{ request.user.username }}</a></li>

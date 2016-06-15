@@ -13,4 +13,6 @@ urlpatterns = [
 
     url(r'^', include('fastblog.urls.auth', namespace='auth')),
 
+    url(r'^fastblog/', include('fastblog.urls.posts', namespace='fastblog')),
+
 ] + static(settings.MEDIA_URL, documents_root=settings.MEDIA_ROOT)
