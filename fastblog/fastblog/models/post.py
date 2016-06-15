@@ -21,7 +21,10 @@ class Post(models.Model):
 
     content = models.TextField()
 
-    image = models.ImageField()
+    image = models.ImageField(
+            blank=True,
+            null=True,
+    )
 
     is_public = models.BooleanField(
             default=True,
