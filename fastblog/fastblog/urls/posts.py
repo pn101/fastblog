@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/edit/$', PostEditView.as_view(), name='edit'),
     url(r'^(?P<pk>\d+)/delete/$', PostDeleteView.as_view(), name='delete'),
 
+    url(r'^(?P<pk>\d+)/comments/create/$', PostCommentCreateView.as_view(), name='postcommentcreate'),
+
 ]
