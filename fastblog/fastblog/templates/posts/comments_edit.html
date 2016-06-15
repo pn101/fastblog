@@ -11,11 +11,19 @@
 
     <h4>Comments ({{ post.comment_set.count }})</h4>
     <ul>
-        {% for comment in post.comment_set.all %}
-        <li id="{{ comment.id }}">
-            {{ comment.content }} 
-            <a href="{% url 'fastblog:postcommentedit' pk=post.id comment_id=comment.id %}">Edit</a>
-        </li>
+        {% for post_comment in post.comment_set.all %}
+        {% if comment == post_comment %}
+            <form action="" method="POST">
+                {% csrf_token %} 
+                <input type="text" name="content" value="{{ comment.content }}">
+                <input type="submit" value="Edit">
+            </form>
+        {% else %}
+            <li id="{{ post_comment.id }}">
+                {{ post_comment.content }} 
+                <a href="{% url 'fastblog:postcommentedit' pk=post.id comment_id=post_comment.id %}">Edit</a>
+            </li>
+        {% endif %}
         {% endfor %}
     </ul>
 
