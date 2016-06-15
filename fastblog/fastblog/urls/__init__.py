@@ -11,4 +11,6 @@ urlpatterns = [
 
     url(r'^$', HomeView.as_view(), name='home'),
 
+    url(r'^', include('fastblog.urls.auth', namespace='auth')),
+
 ] + static(settings.MEDIA_URL, documents_root=settings.MEDIA_ROOT)
