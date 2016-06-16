@@ -24,7 +24,7 @@
 </ul>
 
 
-<h3>My Bitlinks</h3>
+<h3>My Bitlinks <span><a href="{% url 'bitly:dashboard' %}">Dashboard</a></span></h3>
 <ul>
     {% for bitlink in request.user.bitlink_set.all %}
     <li>
