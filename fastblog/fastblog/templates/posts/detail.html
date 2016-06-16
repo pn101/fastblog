@@ -13,7 +13,7 @@
     <ul>
         {% for comment in post.comment_set.all %}
         <li id="{{ comment.id }}">
-            {{ comment.content }} 
+            {{ comment.content }} - written by {{ comment.user.username }}
             <a href="{% url 'fastblog:postcommentedit' pk=post.id comment_id=comment.id %}">Edit</a>
             <a href="{% url 'fastblog:postcommentdelete' pk=post.id comment_id=comment.id %}">Delete</a>
         </li>

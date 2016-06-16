@@ -23,4 +23,14 @@
     {% endfor %}
 </ul>
 
+
+<h3>My Bitlinks</h3>
+<ul>
+    {% for bitlink in request.user.bitlink_set.all %}
+    <li>
+    <a href="{{ bitlink.get_absolute_url }}">localhost:8000/bitly/{{ bitlink.shorten_hash }} - ({{ bitlink.original_url }})</a>
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

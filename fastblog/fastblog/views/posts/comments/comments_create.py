@@ -6,11 +6,10 @@ from fastblog.models import Post
 
 
 class PostCommentCreateView(CommentBaseView, LoginRequiredMixin, CreateView):
+    template_name = 'posts/detail.html'
     fields = [
         'content',
     ]
-
-    template_name = 'posts/detail.html'
 
     def form_valid(self, form):
         form.instance.user = self.request.user

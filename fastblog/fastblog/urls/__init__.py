@@ -15,4 +15,6 @@ urlpatterns = [
 
     url(r'^fastblog/', include('fastblog.urls.posts', namespace='fastblog')),
 
+    url(r'^bitly/', include('fastblog.urls.bitly', namespace='bitly')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

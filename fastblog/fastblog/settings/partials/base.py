@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'fastblog',
+    'users',
+    'posts',
+    'bitly',
 ]
 
 MIDDLEWARE_CLASSES = [

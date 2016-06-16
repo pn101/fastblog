@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+
+<h2>My Posts</h2>
+<ul>
+    {% for post in post_list %}
+    <li>
+        {{ post.title }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>My Comments</h2>
+<ul>
+    {% for comment in comment_list %}
+    <li>
+        {{ comment.content }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>My BitLinks</h2>
+<ul>
+    {% for bitlink in bitlink_list %}
+    <li>
+        localhost:8000/bitly/{{ bitlink.shorten_hash }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
