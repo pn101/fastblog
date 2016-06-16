@@ -14,11 +14,6 @@ class BitLinkCreateView(BitLinkBaseView, LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        form.save()
-        hashids = Hashids(salt="my bitlink is awesome", min_length=4)
-        form.instance.shorten_hash = hashids.encode(
-                form.instance.id,
-        )
         return super(BitLinkCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):

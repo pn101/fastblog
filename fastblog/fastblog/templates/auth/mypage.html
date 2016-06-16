@@ -27,7 +27,7 @@
 <ul>
     {% for bitlink in request.user.bitlink_set.all %}
     <li>
-    <a href="{% url 'bitly:redirect' shorten_hash=bitlink.shorten_hash %}">localhost:8000/bitly/{{ bitlink.shorten_hash }} - created on {{ bitlink.created_at }}</a>
+    <a href="{{ bitlink.get_absolute_url }}">localhost:8000/bitly/{{ bitlink.shorten_hash }} - created on {{ bitlink.created_at }}</a>
     </li>
     {% endfor %}
 </ul>
