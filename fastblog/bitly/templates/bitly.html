@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1>Bitly</h1>
+<a href="{% url 'bitly:dashboard' %}">Dashboard</a>
 <form action="" method="POST">
     {% csrf_token %}
     <input type="text" name="original_url" placeholder="http://google.com">
