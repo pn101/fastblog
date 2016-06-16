@@ -1,9 +1,9 @@
 <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'fastblog:list' %}">Blog</a></li>
-    <li><a href="{% url 'bitly:create' %}">Bitly</a></li>
 
     {% if request.user.is_authenticated %}
+    <li><a href="{% url 'bitly:create' %}">Bitly</a></li>
     <li>Welcome, <a href="{% url 'auth:mypage' %}">@{{ request.user.username }}</a></li>
     <li><a href="{% url 'auth:logout' %}">Logout</a></li>
     {% else %}

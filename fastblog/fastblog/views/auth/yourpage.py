@@ -13,5 +13,4 @@ class YourPageView(LoginRequiredMixin, TemplateView):
         context['site_name'] = User.objects.get(username=self.kwargs.get('user_name')).username
         context['post_list'] = User.objects.get(username=self.kwargs.get('user_name')).post_set.all()
         context['comment_list'] = User.objects.get(username=self.kwargs.get('user_name')).comment_set.all()
-        context['bitlink_list'] = User.objects.get(username=self.kwargs.get('user_name')).bitlink_set.all()
         return context
