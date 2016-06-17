@@ -2,6 +2,7 @@ from django.test import TestCase
 
 
 class PricingViewTestCase(TestCase):
+
     def setUp(self):
         self.response = self.client.get('/pricing/')
 
