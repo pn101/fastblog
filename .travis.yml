@@ -6,4 +6,4 @@ python:
 install:
     - pip install -r requirements.txt
 script:
-    - make test
+    - python fastblog/manage.py test bitly fastblog posts users -v2
