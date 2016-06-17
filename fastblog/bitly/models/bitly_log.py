@@ -5,9 +5,9 @@ class BitLinkLog(models.Model):
 
     bitlink = models.ForeignKey('BitLink')
 
-    created_at = models.DateTimeField(auto_add_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    http_referr = models.CharField(
+    http_referer = models.CharField(
             max_length=255,
             blank=True,
             null=True,
@@ -19,13 +19,13 @@ class BitLinkLog(models.Model):
             null=True,
     )
 
-    logname = models.CharfField(
+    logname = models.CharField(
             max_length=120,
             blank=True,
             null=True,
     )
 
-    request_addr = models.CharField(
+    remote_addr = models.CharField(
             max_length=31,
             blank=True,
             null=True,

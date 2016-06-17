@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ bitlink.original_url }}</h1>
+localhost:8000/bitly/{{ bitlink.shorten_hash }}
+
+<ul>
+    {% for bitlinklog in bitlink.bitlinklog_set.all %}
+    <li>
+        logname : {{ bitlinklog.logname }}
+    </li>
+    <li>
+        created at : {{ bitlinklog.created_at }}
+    </li>
+    <li>
+        http referer : {{ bitlinklog.http_referer }}
+    </li>
+    <li>
+        http user agent : {{ bitlinklog.http_user_agent }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
