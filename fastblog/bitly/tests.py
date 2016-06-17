@@ -18,14 +18,15 @@ class BitLinkCreateViewTestCase(TestCase):
         )
 
         # Create Test BitLink
-        test_original_url = 'http://google.com'
+        for i in range(100):
+            test_original_url = 'http://google{i}.com'.format(i=i)
 
-        test_bitlink = BitLink.objects.create(
-                user=test_user,
-                original_url=test_original_url,
-        )
+            test_bitlink = BitLink.objects.create(
+                    user=test_user,
+                    original_url=test_original_url,
+            )
 
-        # Test for shorten_hash in test_bitlink
-        self.assertTrue(
-                test_bitlink.shorten_hash,
-        )
+            # Test for shorten_hash in test_bitlink
+            self.assertTrue(
+                    test_bitlink.shorten_hash,
+            )
