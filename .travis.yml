@@ -5,7 +5,7 @@ python:
 install:
     - pip install -r requirements/development.txt
 script:
-    - pep8 fastblog
+    - pep8 fastblog/
     - python fastblog/manage.py test bitly fastblog posts users -v2
 notifications:
     slack: pn101:gRAIEHfMDfA6AZ9Hz28aC4e3
