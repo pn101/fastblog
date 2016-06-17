@@ -8,3 +8,4 @@ script:
     - python fastblog/manage.py test bitly fastblog posts users -v2
 notifications:
     slack: pn101:gRAIEHfMDfA6AZ9Hz28aC4e3
+    email: false
