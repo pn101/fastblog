@@ -1,13 +1,12 @@
 from django.test import TestCase
+from django.core.urlresolvers import reverse
 
 
-class PricingViewTestCase(TestCase):
+class HomeViewTestCase(TestCase):
 
-    def setUp(self):
-        self.response = self.client.get('/pricing/')
-
-    def test_pricing_should_return_200(self):
+    def test_home_view_to_return_200(self):
+        response = self.client.get(reverse('home'))
         self.assertEqual(
-                self.response.status_code,
+                response.status_code,
                 200,
         )
