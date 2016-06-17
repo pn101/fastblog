@@ -11,10 +11,11 @@ class BitLinkRedirectView(RedirectView):
         )
 
         bitlinklog = bitlink.bitlinklog_set.create(
-                http_referer=request.META.get('HTTP_REFERER'),
-                http_user_agent=request.META.get('HTTP_USER_AGENT'),
-                logname=request.META.get('LOGNAME'),
-                remote_addr=request.META.get('REMOTE_ADDR'),
+                http_referer=self.request.META.get('HTTP_REFERER'),
+                http_user_agent=self.request.META.get('HTTP_USER_AGENT'),
+                logname=self.request.META.get('LOGNAME'),
+                remote_addr=self.request.META.get('REMOTE_ADDR'),
+                http_meta_json=str(self.request.META)
         )
 
         return bitlink.original_url

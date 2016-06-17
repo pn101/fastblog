@@ -30,3 +30,8 @@ class BitLinkLog(models.Model):
             blank=True,
             null=True,
     )
+
+    http_meta_json = models.TextField(
+            blank=True,
+            null=True,
+    )
