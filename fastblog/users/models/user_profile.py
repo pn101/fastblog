@@ -37,3 +37,7 @@ class UserProfile(models.Model):
     is_phonenumber_exists = models.BooleanField(
             default=False,
     )
+
+    signup_slack_notification = models.BooleanField(
+            default=False,
+    )

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 from users.models import UserProfile
 
-from fastblog.utils import send_sms
+from fastblog.utils import send_sms, slack_notification
 
 
 @receiver(post_save, sender=User)
@@ -28,4 +28,14 @@ def post_save_userprofile(sender, instance, created, **kwargs):
                 ),
         )
         instance.signup_sms_sent = True
+        instance.save()
+
+    if instance.is_phonenumber_exists and not instance.signup_slack_notification:
+        slack_notification(
+                username='Signup Slack Noficiation',
+                text='{user} has signed up to your service'.format(
+                    user=instance.user.username,
+                ),
+        )
+        instance.signup_slack_notification = True,
         instance.save()
