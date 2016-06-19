@@ -29,3 +29,7 @@ class UserProfile(models.Model):
             blank=True,
             null=True,
     )
+
+    signup_sms_sent = models.BooleanField(
+            default=False,
+    )
