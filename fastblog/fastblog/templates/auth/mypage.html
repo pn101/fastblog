@@ -4,6 +4,11 @@
 
 {% block content %}
 <h1>{{ request.user.username }}</h1>
+<ul>
+    <li>Name : {{ request.user.userprofile.firstname }} {{ request.user.userprofile.lastname }}</li>
+    <li>Phone No. : {{ request.user.userprofile.phonenumber }}</li>
+    <li>Address : {{ request.user.userprofile.address }}</li>
+</ul>
 <a href="{% url 'fastblog:create' %}">Create FastBlog Post</a>
 <h3>My FastBlog Posts</h3>
 <ul>

@@ -6,6 +6,18 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User)
 
+    firstname = models.CharField(
+            max_length=32,
+            blank=True,
+            null=True,
+    )
+
+    lastname = models.CharField(
+            max_length=32,
+            blank=True,
+            null=True,
+    )
+
     phonenumber = models.CharField(
             max_length=16,
             blank=True,
