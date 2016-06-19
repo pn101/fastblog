@@ -33,6 +33,7 @@ class SignupView(View):
         user.userprofile.lastname = lastname
         user.userprofile.phonenumber = phonenumber
         user.userprofile.address = address
+        user.userprofile.is_phonenumber_exists = True
         user.userprofile.save()
 
         return redirect('auth:login')

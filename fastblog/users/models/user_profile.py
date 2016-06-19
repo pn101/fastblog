@@ -33,3 +33,7 @@ class UserProfile(models.Model):
     signup_sms_sent = models.BooleanField(
             default=False,
     )
+
+    is_phonenumber_exists = models.BooleanField(
+            default=False,
+    )
